@@ -10,3 +10,4 @@ description: | Real time visitor counter example showing usage of selected serve
 
 # System version requirement.
 sys_version: '>= 2.0.0'
+

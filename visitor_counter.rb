@@ -70,3 +70,4 @@ attr_reader :hits_total, :visits_total, :visits_unique
     ses[:session_visits].set( msg, visits )
   end
 end 
+

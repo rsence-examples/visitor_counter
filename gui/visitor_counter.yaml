@@ -50,3 +50,5 @@ subviews:
       - class: HStringView
         rect: [95, 70, 100, 20]
         bind: :values.unique_visits
+
+
