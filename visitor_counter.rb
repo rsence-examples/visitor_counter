@@ -31,8 +31,8 @@ attr_reader :hits_total, :visits_total, :visits_unique
   end
   
   # Runs every time during the value synchronization (every time the client connects)
+  # Does not need super
   def idle( msg )
-    super( msg )
     @hits_total += 1
     ses = get_ses( msg )
     # Sets all the values which might have changed on the server
@@ -47,7 +47,7 @@ attr_reader :hits_total, :visits_total, :visits_unique
   
   # Restore session will be invoked when an old session in client is detected
   def restore_ses( msg )
-    super( msg )
+    super
     @visits_total += 1
     ses = get_ses( msg )
     ses[:total_visits].set( msg, @visits_total )
@@ -56,7 +56,7 @@ attr_reader :hits_total, :visits_total, :visits_unique
   
   # Session initialization, whenever a new client is detected this method will be invoked
   def init_ses( msg )
-    super( msg )
+    super
     @visits_total += 1
     @visits_unique += 1
     add_session_visit( msg )
