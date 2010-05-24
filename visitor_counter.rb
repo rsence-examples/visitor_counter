@@ -8,7 +8,8 @@
  
 # = Visitor Counter
 # Real time visitor counter example showing usage of selected server events. 
-# Please refer to server side documentation for full list of events.
+# Please refer to server side documentation of plugins 
+# (ri RSence::Plugins::PluginTemplate) for full list of events.
 #
 # Please refer to rdoc of rsence gem for full server side documentation.
 # 
@@ -16,6 +17,7 @@
 # questions.
 
 class VisitorCounter < GUIPlugin
+# Getters for initial values in values.yaml
 attr_reader :hits_total, :visits_total, :visits_unique
   # Called once when the plugin is loaded
   def open
@@ -78,7 +80,5 @@ attr_reader :hits_total, :visits_total, :visits_unique
     puts "session visits: #{visits}"
     visits += 1
     ses[:session_visits].set( msg, visits )
-    
   end
-
 end 
