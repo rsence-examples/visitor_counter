@@ -62,22 +62,10 @@ attr_reader :hits_total, :visits_total, :visits_unique
     add_session_visit( msg )
   end
   
-  # Value initialization method, see values.yaml for details
-  def session_visits( msg )
-    ses = get_ses( msg )
-    puts ses[:session_visits]
-    if (ses[:session_visits] == nil)
-      return 0
-    else
-      return ses[:session_visits].data
-    end
-  end
-  
   # A helper method to add +1 for :session_visits
   def add_session_visit( msg )
     ses = get_ses( msg )
     visits = ses[:session_visits].data
-    puts "session visits: #{visits}"
     visits += 1
     ses[:session_visits].set( msg, visits )
   end

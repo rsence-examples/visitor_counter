@@ -9,13 +9,10 @@
     :method: visits_total
 # How many visits has this particular session (== client) had
 :session_visits:
-  # Initial value by value_call( msg ) server side method
-  # If you want a static default value, just use :value: (check from the other examples) 
-  # available at http://rsence.org/projects/rsence-examples
-  :value_call:
-    :method: session_visits
-    # Send a msg (session data) with value call, used to check whether the value is already set or nil
-    :uses_msg: true
+  # Default value
+  :value: 0
+  # Default value is not restored once it is set
+  :restore_default: false
 # The number of unique visits
 :unique_visits:
   :value_call:
