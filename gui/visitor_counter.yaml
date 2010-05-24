@@ -1,0 +1,52 @@
+type: GUITree
+version: 0.6
+# Default dependencies
+# This example uses only standard components
+# Please refer to client side API for standard components available at
+# http://rsence.org/
+dependencies:
+- default_theme
+- controls
+class: RSence.GUIApp
+options:
+  # A small priority number makes the onIdle calls more frequent,
+  # A large priority number makes the onIdle colls less frequent.
+  priority: 20
+  # A short description or a name of the application. Visible in task managers and such.
+  label: Visitor Counter
+subviews:
+  - class: HWindow
+    rect: [50, 50, 145, 125]
+    options:
+      closeButton: true
+      noResize: true
+      label: Visitor Counter
+    subviews:
+      - class: HStringView
+        rect: [10, 10, 85, 20]
+        options:
+          value: "Total hits:"
+      - class: HStringView
+        rect: [95, 10, 100, 20]
+        bind: :values.total_hits
+      - class: HStringView
+        rect: [10, 30, 85, 20]
+        options:
+          value: "Total visits: "
+      - class: HStringView
+        rect: [95, 30, 100, 20]
+        bind: :values.total_visits
+      - class: HStringView
+        rect: [10, 50, 85, 20]
+        options:
+          value: "Session visits: "
+      - class: HStringView
+        rect: [95, 50, 100, 20]
+        bind: :values.session_visits
+      - class: HStringView
+        rect: [10, 70, 85, 20]
+        options:
+          value: "Unique visits: "
+      - class: HStringView
+        rect: [95, 70, 100, 20]
+        bind: :values.unique_visits

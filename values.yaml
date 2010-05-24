@@ -1,0 +1,22 @@
+# Name of the value, how many total messages have there been between the server and clients
+:total_hits:
+  :value_call:
+    :method: hits_total
+# Total visits
+:total_visits:
+  # initial value by attr_reader (server side method)
+  :value_call:
+    :method: visits_total
+# How many visits has this particular session (== client) had
+:session_visits:
+  # Initial value by value_call( msg ) server side method
+  # If you want a static initial value, just use :value: (check from the other examples) 
+  # available at http://rsence.org/projects/rsence-examples
+  :value_call:
+    :method: session_visits
+    # send msg (session data) with value call, used to check whether the value is already set or nil
+    :uses_msg: true
+# The number of unique visits
+:unique_visits:
+  :value_call:
+    :method: visits_unique

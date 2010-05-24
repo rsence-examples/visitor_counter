@@ -1,0 +1,17 @@
+Real time visitor counter application
+
+Dependencies:
+RSence 2.0 or higher (http://rubygems.org/gems/rsence)
+
+Usage:
+Drop into the project plugin directory and fire it up! 
+For example:
+- rsence initenv myproject
+- drop the visitor_counter folder and its contents into myproject/plugins
+- rsence run -f myproject
+
+Licence:
+LGPL v3
+
+More information: 
+http://rsence.org/projects/rsence
